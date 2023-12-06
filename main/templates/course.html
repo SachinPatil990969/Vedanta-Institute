@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    course
+{% endblock %}
+
+{% block body %}
+
+ <!-- for Course data  -->
+ <section class="text-gray-600 body-font ">
+    <div class="mt-9 lg:w-3/6  mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mt-5 mb-2 text-gray-900">Add Course</h1>
+        <div class="h-1 w-40 bg-blue-500 rounded"></div>
+      </div>
+      <div class=" mt-9 lg:w-3/6  mx-auto bg-gray-100 rounded-lg p-8  ">
+        <form action="{% url 'course_view' %}" method="post">
+        {% csrf_token %}
+        <div class="relative mb-4">
+          <label for="course_name" class="leading-7 text-sm text-gray-600">Course Name</label>
+          <input type="text" id="course_name" name="course_name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+            <label for="course_faculaty_name" class="leading-7 text-sm text-gray-600">Faculaty Name</label>
+            <input type="text" id="course_faculaty_name" name="course_faculaty_name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+        <div class="relative mb-4">
+          <label for="course_duration" class="leading-7 text-sm text-gray-600">Course Duration</label>
+          <input type="text" id="course_duration" name="course_duration" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+            <label for="course_fees" class="leading-7 text-sm text-gray-600">Fees</label>
+            <input type="text" id="course_fees" name="course_fees" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button type="submit" class="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Submit</button>
+       </form>
+     </div>
+      </div>
+
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mt-5">Course Data</h1>
+        <table class="table-auto w-full text-left whitespace-no-wrap">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Name</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Faculaty Name</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Course Duration</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                  <td class="px-4 py-3">{{ course.course_name }}</td>
+                  <td class="px-4 py-3">{{course.course_faculaty_name}}</td>
+                  <td class="px-4 py-3">{{course.course_duration}}</td>
+                  <td class="px-4 py-3 text-lg text-gray-900">{{course.course_fees}}</td>
+                </tr>
+                {% endfor %}   
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </section>
+{% endblock %}

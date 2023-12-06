@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Teachers
+{% endblock %}
+
+{% block body %}
+
+   <!-- for Teachers data  -->
+  <section class="text-gray-600 body-font ">
+    <div class="mt-9 lg:w-3/6  mx-auto">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mt-5 mb-2 text-gray-900">Add Teachers</h1>
+        <div class="h-1 w-40 bg-blue-500 rounded"></div>
+      </div>
+   
+      <div class=" mt-9 lg:w-3/6  mx-auto bg-gray-100 rounded-lg p-8  ">        
+        <form action="{% url 'teachers_view' %}" method="post">
+          {% csrf_token %}
+        <div class="relative mb-4">
+          <label for="full-name" class="leading-7 text-sm text-gray-600">First Name</label>
+          <input type="text" id="full_name" name="full_name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+            <label for="full-name" class="leading-7 text-sm text-gray-600">Last Name</label>
+            <input type="text" id="last_name" name="last_name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+            <label for="text" class="leading-7 text-sm text-gray-600">Mobile</label>
+            <input type="text" id="mobile" name="mobile" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+            <label for="text" class="leading-7 text-sm text-gray-600">Course</label>
+            <input type="text" id="course" name="course" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button type="submit" class="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Submit</button>
+      </div>
+      </div>
+
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Teachers Data</h1>
+        <table class="table-auto w-full text-left whitespace-no-wrap">
+            <thead>
+              <tr>
+                  <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Name</th>
+                  <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Course</th>
+                  <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for teach in teachers %}
+                <tr>
+                  <td class="px-4 py-3 ml-2">{{ teach.first_name }} {{ teach.last_name }}</td>
+                  <td class="px-4 py-3">{{ teach.mobile }}</td>
+                  <td class="px-4 py-3">{{teach.course}}</td>
+                  
+                </tr>
+                {% endfor %}   
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+
+
+

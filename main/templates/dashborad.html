@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block body %}
+
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <h1 class="text-2xl font-medium title-font text-gray-900 mb-12 text-center">Dashboard</h1>
+        <hr class="h-px my-8 bg-blue-200 border-0 dark:bg-blue-700">
+
+  
+        <!-- box student Teachers books club -->
+      <div class="flex flex-wrap -m-4 text-center">
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+              </svg>
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{ student_count }}</h2>
+            <p class="leading-relaxed">Students</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="Teacher" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24"><path fill="#3B82F6" d="M12.25 45a8.5 8.5 0 1 1 8.5-8.5 8.51 8.51 0 0 1-8.5 8.5Zm0-14a5.5 5.5 0 1 0 5.5 5.5 5.51 5.51 0 0 0-5.5-5.5Z" class="color222222 svgShape"></path><path fill="#3B82F6" d="M19.75 57h-15a1.5 1.5 0 0 1-1.5-1.5v-7a6.51 6.51 0 0 1 6.5-6.5h5a6.51 6.51 0 0 1 6.5 6.5v7a1.5 1.5 0 0 1-1.5 1.5Zm-13.5-3h12v-5.5a3.5 3.5 0 0 0-3.5-3.5h-5a3.5 3.5 0 0 0-3.5 3.5Z" class="color222222 svgShape"></path><path fill="#3B82F6" d="M20.25 51a1.5 1.5 0 0 1-1.13-2.49l14-16a1.5 1.5 0 1 1 2.26 2l-14 16a1.49 1.49 0 0 1-1.13.49zm39-41h-49a1.5 1.5 0 0 1 0-3h49a1.5 1.5 0 0 1 0 3zm0 31h-21a1.5 1.5 0 0 1 0-3h21a1.5 1.5 0 0 1 0 3z" class="color222222 svgShape"></path><path fill="#3B82F6" d="M55.25 41a1.5 1.5 0 0 1-1.5-1.5v-31a1.5 1.5 0 0 1 3 0v31a1.5 1.5 0 0 1-1.5 1.5zm-41-17a1.5 1.5 0 0 1-1.5-1.5v-14a1.5 1.5 0 0 1 3 0v14a1.5 1.5 0 0 1-1.5 1.5zm22-5h-11a1.5 1.5 0 0 1 0-3h11a1.5 1.5 0 0 1 0 3zm7 8h-18a1.5 1.5 0 0 1 0-3h18a1.5 1.5 0 0 1 0 3z" class="color222222 svgShape"></path></svg>
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{teachers_count}}</h2>
+            <p class="leading-relaxed">Teachers</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="OnlineCourse" fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+              <g data-name="Layer 2" fill="#3B82F6" class="color000000 svgShape">
+                <g data-name="online course" fill="#3B82F6" class="color000000 svgShape">
+                  <path d="M461.84,431.67H50.16A50.21,50.21,0,0,1,0,381.51V120.45A50.21,50.21,0,0,1,50.16,70.29h89.1a10,10,0,0,1,0,20H50.16A30.19,30.19,0,0,0,20,120.45V381.51a30.19,30.19,0,0,0,30.16,30.16H461.84A30.19,30.19,0,0,0,492,381.51V120.45a30.19,30.19,0,0,0-30.16-30.16H372.63a10,10,0,0,1,0-20h89.21A50.21,50.21,0,0,1,512,120.45V381.51A50.21,50.21,0,0,1,461.84,431.67Z" fill="#3B82F6" class="color000000 svgShape"></path>
+                  <path d="M502 381.47H10a10 10 0 010-20H502a10 10 0 010 20zM341.35 512a10 10 0 01-9.37-6.49l-27.69-73.84H207.71L180 505.51a10 10 0 01-18.73-7l30.12-80.33a10 10 0 019.37-6.49H311.22a10 10 0 019.37 6.49l30.12 80.33a10 10 0 01-5.85 12.87A9.88 9.88 0 01341.35 512z" fill="#3B82F6" class="color000000 svgShape"></path>
+                  <path d="M381.51 512h-251a10 10 0 010-20h251a10 10 0 010 20zM255.94 212a10.07 10.07 0 01-5.16-1.43L93.38 115.71A10 10 0 01103.7 98.57l152.24 91.72L408.18 98.57a10 10 0 1110.32 17.14L261.1 210.53A10 10 0 01255.94 212z" fill="#3B82F6" class="color000000 svgShape"></path>
+                  <path d="M98.54 117.14a9.9 9.9 0 01-5.16-1.44l-1.93-1.16a10 10 0 010-17.13l159.33-96a10 10 0 0110.32 0l159.34 96a10 10 0 010-17.13l-1.93-1.16a10 10 0 01-13.73-3.39 10.27 10.27 0 01-.7-1.41L255.94 21.67 107.81 110.9a10.27 10.27 0 01-.7 1.41A10 10 0 0198.54 117.14zM337.46 261h-163c-21.09 0-38.24-17.69-38.24-39.44V135.83a10 10 0 1120 0v85.71c0 10.72 8.18 19.44 18.24 19.44h163c10.06 0 18.24-8.72 18.24-19.44V135.83a10 10 0 0120 0v85.71C375.7 243.29 358.55 261 337.46 261z" fill="#3B82F6" class="color000000 svgShape"></path>
+                  <path d="M415.39 187.24a10 10 0 01-10-10V106a10 10 0 0120 0v71.26A10 10 0 01415.39 187.24zM421.67 341.31H90.33a10 10 0 01-10-10V291.14a10 10 0 0110-10H421.67a10 10 0 0110 10v40.17A10 10 0 01421.67 341.31zm-321.34-20H411.67V301.14H100.33z" fill="#3B82F6" class="color000000 svgShape"></path>
+                </g>
+              </g>
+            </svg>
+            
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{ course_count }}</h2>
+            <p class="leading-relaxed">Course</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="Book" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24"><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="M52.655 360.043c37.609 3.443 76.534 13.048 115.294 28.813V429.4L9 401.127V64.931l43.655 7.758V360.043zM255.904 436.516v8.526l-31.946-5.684v-23.275c10.714 6.078 21.345 12.643 31.883 19.686v.83C255.862 436.568 255.883 436.547 255.904 436.516z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="M257.099 117.709v318.893l-.598-.105-.344-.06-.179-.03-.075-.015-.06-.015V119.205c.015-.03.045-.06.06-.09v-1.616l.09.015.165.03.344.06.404.075L257.099 117.709zM83.761 326.553c24.644-.529 54.349 7.883 84.189 25.235v37.069c-38.76-15.765-77.686-25.37-115.294-28.813V41.159c10.279.933 20.661 2.344 31.105 4.211C83.761 45.37 83.761 326.553 83.761 326.553zM255.841 434.701v1.068c-10.538-7.043-21.169-13.608-31.883-19.686v-20.194C235.17 407.391 245.905 420.335 255.841 434.701z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M257.099,117.709v318.893c-0.09-0.06-0.165-0.119-0.254-0.165c-0.119-0.09-0.224-0.165-0.344-0.24
+                c-0.09-0.06-0.179-0.119-0.27-0.165c-0.105-0.09-0.224-0.165-0.329-0.224c-0.015-0.015-0.045-0.03-0.06-0.045V119.205
+                c0.015-0.03,0.045-0.06,0.06-0.09v-1.721c-0.195-0.3-0.389-0.598-0.613-0.883c0.21,0.119,0.403,0.254,0.613,0.403
+                c0.194,0.119,0.403,0.254,0.598,0.389c0.119,0.075,0.224,0.149,0.344,0.24c0.03,0.015,0.075,0.045,0.105,0.06
+                C256.995,117.65,257.055,117.68,257.099,117.709z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M255.904,117.392v1.722c-0.021,0.031-0.041,0.062-0.062,0.093V434.7c-9.936-14.365-20.671-27.309-31.883-38.812
+                c-17.871-18.338-36.966-33.045-56.008-44.101c-29.84-17.352-59.545-25.764-84.189-25.235V9.151
+                c47.949-1.006,115.076,31.811,165.1,98.44c2.178,2.904,4.335,5.881,6.431,8.92C255.509,116.801,255.707,117.092,255.904,117.392z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M257.16,119.205v317.396c-0.015-0.03-0.045-0.06-0.06-0.09c-0.03-0.03-0.045-0.075-0.075-0.105
+                c-0.09-0.119-0.165-0.254-0.254-0.374c-0.09-0.135-0.179-0.254-0.27-0.374c-0.195-0.299-0.389-0.583-0.598-0.868
+                c0-0.03-0.03-0.06-0.06-0.09V119.205c0.015-0.03,0.045-0.06,0.06-0.09v-1.721c0.045,0.045,0.075,0.075,0.09,0.119
+                c0.03,0.03,0.045,0.06,0.06,0.09c0.03,0.03,0.045,0.045,0.045,0.075c0.149,0.195,0.284,0.389,0.403,0.584
+                c0.21,0.284,0.403,0.568,0.598,0.853C257.114,119.145,257.144,119.175,257.16,119.205z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M504,64.927V401.13l-246.901,43.91v-8.528c0.015,0.03,0.045,0.06,0.06,0.09v-0.838c66.397-44.389,136.848-69.643,203.185-75.717
+                V72.691L504,64.927z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M257.16,119.205v317.172l-0.06,0.015l-0.075,0.015l-0.179,0.03l-0.344,0.06l-0.598,0.105V117.709l0.194-0.03l0.403-0.075
+                l0.344-0.06l0.165-0.03l0.09-0.015v1.616C257.114,119.145,257.144,119.175,257.16,119.205z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M460.344,41.154v318.893c-66.337,6.074-136.788,31.328-203.185,75.717v-1.062c50.598-73.174,121.857-109.215,172.081-108.153
+                V45.373C439.683,43.503,450.066,42.096,460.344,41.154z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="
+                M257.099,119.115c0.015,0.03,0.045,0.06,0.06,0.09v316.558c-0.015,0.015-0.045,0.03-0.06,0.045
+                c-0.105,0.06-0.224,0.135-0.329,0.224c-0.09,0.045-0.179,0.105-0.27,0.165c-0.119,0.075-0.224,0.149-0.344,0.24
+                c-0.09,0.045-0.165,0.105-0.254,0.165V117.709c0.045-0.03,0.105-0.06,0.149-0.105c0.03-0.015,0.075-0.045,0.105-0.06
+                c0.119-0.09,0.224-0.165,0.344-0.24c0.195-0.135,0.403-0.27,0.598-0.389c0.21-0.149,0.404-0.284,0.613-0.403
+                c-0.224,0.284-0.419,0.583-0.613,0.883v1.72H257.099z" class="colorStroke464668 svgStroke"></path><path fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="10" d="M429.24 9.152v317.396c-50.224-1.062-121.483 34.978-172.081 108.153V119.205c-.015-.03-.045-.06-.06-.09v-1.721c.195-.3.389-.598.613-.883 2.11-3.037 4.249-6.015 6.448-8.917C314.175 40.96 381.291 8.15 429.24 9.152zM223.958 395.889v107.982l-28.004-28.004-28.004 28.004V351.787C186.993 362.844 206.087 377.551 223.958 395.889z" class="colorStroke464668 svgStroke"></path></svg>
+            <h2 class="title-font font-medium text-3xl text-gray-900">{{ books_count }}</h2>
+            <p class="leading-relaxed">Books</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- for students data  -->
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto">
+              <div class="flex flex-col text-center w-full mb-10">
+                  <hr class="h-px my-8 bg-blue-200 border-0 dark:bg-blue-700">
+                  <h1 class="text-2xl font-medium title-font text-gray-900 text-center">Students Data </h1>
+                  <hr class="h-px my-8 bg-blue-200 border-0 dark:bg-blue-700">
+              </div>
+
+              <div style="overflow-x:auto;">
+                  <table style="border-collapse: collapse; width: 100%; margin: 0 auto;">
+                      <thead>
+                          <tr>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Name</th>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Mobile</th>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Course</th>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Status</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {% for stud in student %}
+                          <tr>
+                              <td style="padding: 12px; border: 1px solid #dddddd;">{{ stud.first_name }} {{ stud.last_name }}</td>
+                              <td style="padding: 12px; border: 1px solid #dddddd;">{{ stud.mobile }}</td>
+                              <td style="padding: 12px; border: 1px solid #dddddd;">{{ stud.course_name }}</td>
+                              <td style="padding: 12px; border: 1px solid #dddddd; text-align: left;">{{ stud.status }}</td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+        </section>
+
+        <!-- for Teachers data  -->
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto">
+              <div class="flex flex-col text-center w-full mb-10">
+                  <hr class="h-px my-8 bg-blue-200 border-0 dark:bg-blue-700">
+                  <h1 class="text-2xl font-medium title-font text-gray-900 text-center">Teachers Data </h1>
+                  <hr class="h-px my-8 bg-blue-200 border-0 dark:bg-blue-700">
+              </div>
+
+              <div style="overflow-x:auto;">
+                  <table style="border-collapse: collapse; width: 100%; margin: 0 auto;">
+                      <thead>
+                          <tr>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Name</th>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Mobile</th>
+                              <th style="padding: 12px; text-align: left; background-color: #f3f3f3; border: 1px solid #dddddd;">Course</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {% for teach in teachers %}
+                          <tr>
+                              <td style="padding: 12px; border: 1px solid #dddddd;">{{ teach.first_name }} {{ teach.last_name }}</td>
+                              <td style="padding: 12px; border: 1px solid #dddddd;">{{ teach.mobile }}</td>
+                              <td style="padding: 12px; border: 1px solid #dddddd;">{{ teach.course }}</td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+        </section>
+
+
+    </div>
+  </section>
+
+{% endblock %}
+
